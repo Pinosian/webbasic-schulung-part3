@@ -1,5 +1,5 @@
 <template>
-  <h2>This is my To-Do List</h2>
+  <h2>Meine ToDo-Liste</h2>
   <!--
         Mehrere ToDos einfügen.
         Überlegt euch auch unterschiedliche Inhalte für die ToDos
@@ -56,22 +56,18 @@
 <script>
 export default {
   name: 'ToDoApp',
+  inject: ['todos'],
   props: {
     msg: String
+  },
+  created(){
+    console.log(this.todos[1].name)
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
-
-
-* {
-  font-family: Poppins;
-}
-
 button.add {
   border: 1px solid lightgrey;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
