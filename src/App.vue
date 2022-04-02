@@ -2,37 +2,36 @@
   <ToDoApp/> <br>
   So könnte der nächste Part aussehen, einfaches hinzufügen einer ToDo: <br><br>
   <ToDoPart1></ToDoPart1>
+  <br><br>
+  <ToDoPart2></ToDoPart2>
+  <br><br>
+  <ToDoPart3></ToDoPart3>
 </template>
 
 <script>
-import ToDoApp from './components/ToDoApp.vue'
+import ToDoApp from './components/ToDoApp.vue';
 import ToDoPart1 from "@/components/ToDoPart1";
+import ToDoPart2 from "@/components/ToDoPart2";
+import ToDoPart3 from "@/components/ToDoPart3";
 
 export default {
   name: 'App',
   data(){
     return {
     todos: [
-      {name: 'Protokoll schreiben'},
-      {name: 'Feedback geben'},
-      {name: 'Projektbewerbung abschicken'}
+      {id: 1, name: 'Protokoll schreiben'},
+      {id: 2, name: 'Feedback geben'},
+      {id: 3, name: 'Projektbewerbung abschicken'}
     ]
   }
-  },
-  methods: {
-    addTodo(name) {
-      console.log(name);
-      this.todos.push({name: name});
-    }
   },
   provide() {
     return {
       todos: this.todos,
-      addTodo: this.addTodo
     }
   },
   components: {
-    ToDoApp, ToDoPart1
+    ToDoApp, ToDoPart1, ToDoPart2, ToDoPart3
   }
 }
 </script>
